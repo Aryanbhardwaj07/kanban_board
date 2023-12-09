@@ -5,7 +5,6 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <h1>Kanban Board App</h1>
       </header>
       <main className="app-main">
         <KanbanBoard />
