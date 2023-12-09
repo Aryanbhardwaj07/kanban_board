@@ -6,7 +6,7 @@ import {
   ExclamationCircleOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-
+import "./Card.css"
 function CardComponent({ title, description, buttonText }) {
   return (
     <Card className="card">

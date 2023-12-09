@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { fetchTickets } from "./Components/apifetch";
+import { fetchTickets } from "./apifetch";
 import Column from "./Column";
-import { Select, Button } from "antd";
+import { Select, Button, Slider } from "antd";
 import "antd/dist/reset.css";
 import "./Board.css";
+import { Sliders } from "react-feather";
+
 
 const { Option } = Select;
 
@@ -73,10 +75,12 @@ const KanbanBoard = () => {
   return (
     <div className="kanban-board">
       <div className="options">
-        <Select
+    
+        <Sliders/>
+      <Select
           value={groupingOption}
           onChange={(value) => setGroupingOption(value)}
-          style={{ width: 180, marginRight: 10 }}
+          style={{ width: 180, marginRight: 10 ,}}
         >
           <Option value="status">Group by Status</Option>
           <Option value="user">Group by User</Option>
@@ -88,7 +92,9 @@ const KanbanBoard = () => {
         <Button onClick={() => setSortedBy("title")} type="primary">
           Sort by Title
         </Button>
+       
       </div>
+   
       <div className="board-columns">
         {Object.keys(sortedTickets).map((groupTitle) => (
           <Column
